@@ -50,7 +50,6 @@ const HomeLayout: React.FC = () => {
               fontSize="15px"
               w="40%"
               borderRadius="10px"
-              py="25px"
             >
               Learn More
             </Button>
@@ -65,7 +64,10 @@ const HomeLayout: React.FC = () => {
               <Img src="/svg/client-maker.svg" alt="maker" h="15px" />
             </Flex>
           </Flex>
-          <Flex pt="50px" display={{ xs: "none", sm: "flex" }}>
+          <Flex
+            pt={{ md: "75px", lg: "50px" }}
+            display={{ xs: "none", sm: "flex" }}
+          >
             <Img
               src="/png/image-hero-desktop.png"
               alt="hero-desktop"

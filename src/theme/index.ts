@@ -1,6 +1,7 @@
 import { extendTheme } from "@chakra-ui/react";
 
 import { FormLabel } from "./components/formLabel";
+import { Button } from "./components/button";
 import { colors } from "./colors";
 import { breakpoints } from "./breakpoints";
 import { Text } from "./components/text";
@@ -89,7 +90,7 @@ export const theme = extendTheme({
   },
   breakpoints,
   components: {
-   
+   Button,
     Text,
     FormLabel,
   },

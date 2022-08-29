@@ -6,7 +6,7 @@ const SectionContainer: React.FC<ContainerProps> = ({ children, ...props }) => {
       width="100%"
       maxW="1440px"
       mx="auto"
-      px={{ xs: "0px", sm: "150px" }}
+      px={{ xs: "0px", md: "50px", lg: "150px" }}
       {...props}
     >
       {children}

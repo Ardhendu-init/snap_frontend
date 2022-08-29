@@ -11,13 +11,21 @@ const Navbar: React.FC = () => {
     >
       <Flex>
         <Img src="/svg/logo.svg" alt="logo" h="30px" />
-        <Flex pl="50px" gap="10" display={{ xs: "none", sm: "flex" }}>
+        <Flex
+          pl="50px"
+          gap={{ md: "5", lg: "10" }}
+          display={{ xs: "none", sm: "flex" }}
+        >
           {navLink.map((link, index) => {
             return <NavLink key={index} linkName={link} />;
           })}
         </Flex>
       </Flex>
-      <Flex gap="6" pb="5px" display={{ xs: "none", sm: "flex" }}>
+      <Flex
+        gap={{ md: "4", lg: "6" }}
+        pb="5px"
+        display={{ xs: "none", sm: "flex" }}
+      >
         <Button
           color="bg.gray"
           variant="ghost"
@@ -51,7 +59,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ linkName }) => {
   return (
     <>
-      {linkName === "Feature" ? (
+      {linkName === "Feature" || linkName === "Company" ? (
         <Flex gap="3">
           <Link
             fontSize="15px"
