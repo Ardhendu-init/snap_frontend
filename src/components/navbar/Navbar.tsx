@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Flex, Box, Link, Img, Button } from "@chakra-ui/react";
 const navLink = ["Feature", "Company", "Careers", "About"];
+
 const Navbar: React.FC = () => {
+  const [click, setClick] = useState<string>("none");
   return (
     <Flex
       px={{ xs: "20px", sm: "50px" }}
@@ -45,7 +47,54 @@ const Navbar: React.FC = () => {
           Register
         </Button>
       </Flex>
-      <Img src="/svg/icon-menu.svg" display={{ sm: "none" }} />
+
+      <Img
+        src="/svg/icon-menu.svg"
+        display={{ sm: "none" }}
+        onClick={() => setClick("flex")}
+      />
+      <Flex
+        flexDir="column"
+        display={click}
+        zIndex="21"
+        bgColor="bg.white"
+        h="100vh"
+        w="60vw"
+        pos="fixed"
+        top="0"
+        right="0"
+        px="20px"
+        gap={8}
+      >
+        <Img
+          src="/svg/icon-close-menu.svg"
+          display={{ sm: "none" }}
+          onClick={() => setClick("none")}
+          height="25px"
+          width="25px"
+          mt="20px"
+        />
+        {navLink.map((link, index) => {
+          return <NavLink key={index} linkName={link} />;
+        })}
+        <Button
+          color="bg.gray"
+          variant="ghost"
+          fontSize="15px"
+          fontWeight="500"
+        >
+          Login{" "}
+        </Button>
+        <Button
+          fontSize="15px"
+          variant="outline"
+          fontWeight="500"
+          color="bg.gray"
+          borderRadius="10px"
+        >
+          Register
+        </Button>
+      </Flex>
     </Flex>
   );
 };
